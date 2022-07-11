@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* react-test-appと使うときは rails s -p 3001　で起動する
