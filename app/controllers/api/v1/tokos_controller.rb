@@ -1,7 +1,7 @@
 module Api
     module V1
         class TokosController < ApplicationController
-            before_action :set_toko, only: [:show, :update, :destroy, :fovorite]
+            before_action :set_toko, only: [:show, :update, :destroy]
 
             def index
               @tokos = Toko.order(id: :DESC)
@@ -45,13 +45,15 @@ module Api
               render json: { status: 'SUCCESS', message: 'Loaded the toko', data: @toko}, methods: [:image_url]
             end
 
-            # def favorite
-            #   @toko.Heart = @toko.Heart + 1
-            #   if @toko.save
-            #     render json: { status: 'SUCCESS', message: 'Updated the toko', data: @toko}, methods: [:image_url]
-            #   else
-            #     render json: { status: 'ERROR', message: 'Not updated', data: @toko.errors}
-            # end
+            def favorite
+              @toko = Toko.find(params[:toko_id])
+              @toko.Heart = @toko.Heart + 1
+              if @toko.save
+                render json: { status: 'SUCCESS', message: 'Updated the toko', data: @toko}, methods: [:image_url]
+              else
+                render json: { status: 'ERROR', message: 'Not updated', data: @toko.errors}
+              end
+            end
 
             private
       

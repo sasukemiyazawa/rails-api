@@ -6,10 +6,12 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     namespace 'v1' do
-      resources :tokos
-      get '/heart', to: 'tokos#heart' #いいね数降順
-      get '/random', to: 'tokos#random' #ランダムに一つのデータ
-      # get '/:id/Heart', to: 'tokos#fovorite' #いいね機能
+      get 'tokos/random', to: 'tokos#random' #ランダムに一つのデータ
+      get 'tokos/heart', to: 'tokos#heart' #いいね数降順
+      resources :tokos do
+        get 'favorite', to: 'tokos#favorite' #いいね機能
+      end
+        
     end
   end
 

@@ -5,8 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Sasuke = Toko.create(name:"Sasuke", comment:"Hello!", Heart:5);
-Sasuko = Toko.create(name:"Sasuko", comment:"Hi!", Heart:3);
+User1 = Toko.create(name:"ユーザー1", comment:"こんにちは!", Heart:5);
+User2 = Toko.create(name:"ユーザー２", comment:"こんばんわ", Heart:3);
+User3 = Toko.create(name:"ユーザー3", comment:"おはよう！", Heart:5);
+User4 = Toko.create(name:"ユーザー4", comment:"CS最高!", Heart:3);
+User5 = Toko.create(name:"ユーザー5", comment:"あはははははは", Heart:5);
 
-Sasuke.image.attach(io: File.open(Rails.root.join('public/sasuke.png')), filename: 'sasuke.png')
-Sasuko.image.attach(io: File.open(Rails.root.join('public/sasuko.png')), filename: 'sasuko.png')
+User1.image.attach(io: File.open(Rails.root.join('public/sasuke.png')), filename: 'sasuke.png')
+User2.image.attach(io: File.open(Rails.root.join('public/sasuko.png')), filename: 'sasuko.png')
+User3.image.attach(io: File.open(Rails.root.join('public/joshi.png')), filename: 'sasuke.png')
+User4.image.attach(io: File.open(Rails.root.join('public/raba.png')), filename: 'sasuko.png')
+User5.image.attach(io: File.open(Rails.root.join('public/ireba.png')), filename: 'sasuke.png')
+
